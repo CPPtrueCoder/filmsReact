@@ -12,16 +12,17 @@ const  App= ()=> {
   const  filmService = new FilmService()
   
   
-  // const getMovies = async () => {
-  //   const movies=  await this.filmService.getMovies()
+  const getMovies = async () => {
+    const movies =  await filmService.getMovies();
     
-  // };
+    setMovies(movies);
+
+  };
 
   useEffect(() => {
-    setMovies(filmService.getMovies())
-    setLoading(false);
+    getMovies();
+    setLoading(false)
     
-   
   });
   
 
